@@ -26,6 +26,7 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
 1. Table
 
   Users Table
@@ -58,5 +59,6 @@ Please feel free to use a different markup language if you do not plan to run
   |:---:|:---:|
   |user_id|integer|
   |group_id|integer|
+
 
 
