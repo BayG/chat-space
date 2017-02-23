@@ -43,5 +43,11 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  # To use Haml with Rails, simply add Haml to your Gemfile and run bundle.
+  gem 'haml'
+
+  # Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
+  gem "haml-rails", "~> 0.9"
 end
 
