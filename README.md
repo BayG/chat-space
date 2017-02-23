@@ -61,4 +61,10 @@ Please feel free to use a different markup language if you do not plan to run
   |group_id|integer|
 
 
+2. Relation
 
+  Users Table   One-to-many   Messages Table
+
+  Users Table   One-to-many   User_group Table
+
+  Groups Table   One-to-many   User_group table
