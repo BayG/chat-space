@@ -49,5 +49,8 @@ group :development do
 
   # Haml-rails provides Haml generators for Rails 4. It also enables Haml as the templating engine for you, so you don't have to screw around in your own application.rb when your Gemfile already clearly indicated what templating engine you have installed. Hurrah.
   gem "haml-rails", "~> 0.9"
+
+  # font-awesome
+  gem "font-awesome-rails"
 end
 
