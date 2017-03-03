@@ -1,9 +1,11 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# What is ChatSpace
 
-Things you may want to cover:
+ChatSpace is a sample Web application created for practicing Web service development.
+This README explains many features about this app.
+
+Things you would know:
 
 * Ruby version
 
@@ -23,13 +25,19 @@ Things you may want to cover:
 
 * ...
 
+## Ruby version
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Ruby 2.3.1
 
-1. Table
+## Rails version
 
-  Users Table
+Rails 5.0.1
+
+## Database design
+
+### 1. Tables
+
+  users table
 
   |column|type|
   |:---:|:---:|
@@ -37,7 +45,7 @@ Please feel free to use a different markup language if you do not plan to run
   |email|string|
   |password|integer|
 
-  Messages Table
+  messages table
 
   |column|type|
   |:---:|:---:|
@@ -46,14 +54,14 @@ Please feel free to use a different markup language if you do not plan to run
   |user_id|integer|
   |group_id|integer|
 
-  Groups Table
+  groups table
 
   |column|type|
   |:---:|:---:|
   |group_name|string|
 
 
-  User_group Table
+  users_groups table
 
   |column|type|
   |:---:|:---:|
@@ -61,10 +69,36 @@ Please feel free to use a different markup language if you do not plan to run
   |group_id|integer|
 
 
-2. Relation
+### 2. Relations
 
-  Users Table   One-to-many   Messages Table
+  users table   One-to-many   messages table
 
-  Users Table   One-to-many   User_group Table
+  users table   One-to-many   users_groups table
 
-  Groups Table   One-to-many   User_group table
+  groups table   One-to-many   users_groups table
+
+
+### 3. Associations
+
+ - users
+ has_many :messages
+ has_many :groups, through: :groups_users
+
+ - groups
+ has_many :users, through: :groups_users
+ has_many :messages
+
+ - groups_users
+ belongs_to :group
+ belongs_to :user
+
+
+## Methodology
+
+### Front-end
+
+ - Using Haml instead of HTML
+
+ - Using Sass(.scss) instead of CSS
+
+ - Adopted BEM notation
