@@ -1,5 +1,3 @@
-== README
-
 # What is ChatSpace
 
 ChatSpace is a sample Web application created for practicing Web service development.
@@ -17,13 +15,6 @@ Things you would know:
 
 * Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
 
 ## Ruby version
 
@@ -35,42 +26,40 @@ Rails 5.0.1
 
 ## Database design
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
 
-### 1. Tables
+1. Table
 
-  users table
-
+  users Table
+  
   |column|type|
   |:---:|:---:|
   |name|string|
   |email|string|
   |password|integer|
-
-  messages table
-
+  
+  messages Table
+  
   |column|type|
   |:---:|:---:|
   |body|text|
   |image|string|
   |user_id|integer|
   |group_id|integer|
-
-  groups table
-
+  
+  groups Table
+  
   |column|type|
   |:---:|:---:|
   |group_name|string|
 
-
-  users_groups table
-
+  
+  Users_groups Table
+  
   |column|type|
   |:---:|:---:|
   |user_id|integer|
   |group_id|integer|
-
+  
 
 ### 2. Relations
 
