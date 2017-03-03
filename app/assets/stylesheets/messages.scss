@@ -1,7 +1,3 @@
-// Place all the styles related to the messages controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
 .notation-bar {
    background-color: $lightBlue;
    height: 30px;
@@ -102,7 +98,7 @@ li {
           font-size: 20px;
           color: $titleBlack;
           display: inline-block;
-          letter-spacing: 2px
+          letter-spacing: 2px;
         }
         &__members {
           font-size: 12px;
@@ -176,7 +172,6 @@ li {
         top: 32px;
         right: 130px;
         max-width: 30px;
-
         &:hover{
           cursor: pointer;
           }
@@ -201,4 +196,3 @@ li {
     }
   }
 }
-
