@@ -1,0 +1,198 @@
+.notation-bar {
+   background-color: $lightBlue;
+   height: 30px;
+   width: 100%;
+   color: $textWhite;
+   font-size: 20px;
+   text-align: center;
+}
+p {
+  display: inline-block;
+  text-align: center;
+  vertical-align: center;
+}
+ul {
+  padding: 20px 0;
+}
+li {
+  padding: 20px 0;
+  box-sizing: border-box;
+}
+#contents {
+  height: 100vh;
+  width: 100vw;
+  .sidebar {
+    height: 100%;
+    width: 300px;
+    float: left;
+    &-account {
+      background-color: $nameBlue;
+      height: 100px;
+      width: 100%;
+      color: $textWhite;
+      font-size: 16px;
+      padding: 0 20px;
+      box-sizing: border-box;
+      &-info {
+        position: relative;
+        top: 40px;
+        left: 0px;
+        font-weight: bold;
+      }
+        &__name {
+          float: left;
+          margin: auto;
+          letter-spacing: 1px;
+        }
+        &__create-group {
+          text-align: right;
+          float: right;
+          padding: 0 5px;
+          font-size: 20px;
+          display: inline-block;
+        }
+        &__edit-account {
+          text-align: right;
+          float: right;
+          padding: 0 5px;
+          font-size: 20px;
+          display: inline-block;
+        }
+    }
+    &-group {
+      background-color: $groupBlue;
+      width: 100%;
+      height: calc(100% - 100px);
+      color: $textWhite;
+      padding: 0 20px;
+      box-sizing: border-box;
+      &-block{
+        padding: 0 0;
+      }
+      &__group-name {
+        font-size: 15px;
+        display: inline-block;
+      }
+      &__latest-message {
+        font-size: 11px;
+        display: inline-block;
+      }
+    }
+  }
+  .main-content {
+    width: calc(100% - 300px);
+    float: left;
+    &-header {
+      background-color: white;
+      height: 100px;
+      width: 100%;
+      border-bottom: 1px solid $borderGray;
+      padding: 0 40px;
+      box-sizing: border-box;
+      &-group-info {
+        display: inline-block;
+        position: relative;
+        top: 40px;
+      }
+        &__group-title {
+          font-size: 20px;
+          color: $titleBlack;
+          display: inline-block;
+          letter-spacing: 2px;
+        }
+        &__members {
+          font-size: 12px;
+          color: $textGray;
+          display: inline-block;
+        }
+      .edit-group {
+        position: absolute;
+        top: 28px;
+        right: 40px;
+        height: 45px;
+        width: 70px;
+        margin: 28px auto;
+        padding: 0 20px;
+        vertical-align: middle;
+        text-align: center;
+        font-size: 14px;
+        color: $lightBlue;
+        border-radius: 1px;
+        border: 2px solid $lightBlue;
+        box-sizing: border-box;
+        p {
+          line-height: 45px;
+        }
+      }
+    }
+    &-body {
+      background-color: $bodyGray;
+      height: calc(100vh - 187px);
+      padding: 0 40px;
+      box-sizing: border-box;
+      &__name {
+        font-size: 16px;
+        font-weight: bold;
+        color: $textBlack;
+        display: inline-block;
+      }
+      &__time {
+        font-size: 12px;
+        color: $textGray;
+        display: inline-block;
+      }
+      &__message {
+        font-size: 14px;
+        color: $textBlack;
+        display: inline-block;
+      }
+    }
+    &-footer {
+      position:fixed;
+      bottom:0;
+      width: calc(100% - 300px);
+      background-color: $footerGray;
+      height: 90px;
+      padding: 0 40px;
+      box-sizing: border-box;
+      form {
+        position: relative;
+      }
+      &__message-box {
+        height: 50px;
+        margin: 20px auto;
+        padding: 20px;
+        width: calc(100% - 115px);
+        box-sizing: border-box;
+        border: none;
+        line-height: 8px;
+      }
+      &__insert-file {
+        position: absolute;
+        top: 32px;
+        right: 130px;
+        max-width: 30px;
+        &:hover{
+          cursor: pointer;
+          }
+      }
+      .send-button {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        height: 50px;
+        width: 100px;
+        margin: 20px auto;
+        padding: 20px;
+        text-align: center;
+        color: $textWhite;
+        font-size: 16px;
+        box-sizing: border-box;
+        background-color: $lightBlue;
+        border-radius: 1px;
+        border: 0px;
+        line-height: 0px;
+      }
+    }
+  }
+}

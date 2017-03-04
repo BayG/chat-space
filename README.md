@@ -1,9 +1,9 @@
-== README
+# What is ChatSpace
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ChatSpace is a sample Web application created for practicing Web service development.
+This README explains many features about this app.
 
-Things you may want to cover:
+Things you would know:
 
 * Ruby version
 
@@ -15,56 +15,82 @@ Things you may want to cover:
 
 * Database initialization
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
+## Ruby version
 
-* Deployment instructions
+Ruby 2.3.1
 
-* ...
+## Rails version
 
+Rails 5.0.1
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+## Database design
+
 
 1. Table
 
-  Users Table
-
+  users Table
+  
   |column|type|
   |:---:|:---:|
   |name|string|
   |email|string|
   |password|integer|
-
-  Messages Table
-
+  
+  messages Table
+  
   |column|type|
   |:---:|:---:|
   |body|text|
   |image|string|
   |user_id|integer|
   |group_id|integer|
-
-  Groups Table
-
+  
+  groups Table
+  
   |column|type|
   |:---:|:---:|
   |group_name|string|
 
-
-  User_group Table
-
+  
+  Users_groups Table
+  
   |column|type|
   |:---:|:---:|
   |user_id|integer|
   |group_id|integer|
+  
+
+### 2. Relations
+
+  users table   One-to-many   messages table
+
+  users table   One-to-many   users_groups table
+
+  groups table   One-to-many   users_groups table
 
 
-2. Relation
+### 3. Associations
 
-  Users Table   One-to-many   Messages Table
+ - users
+ has_many :messages
+ has_many :groups, through: :groups_users
 
-  Users Table   One-to-many   User_group Table
+ - groups
+ has_many :users, through: :groups_users
+ has_many :messages
 
-  Groups Table   One-to-many   User_group table
+ - groups_users
+ belongs_to :group
+ belongs_to :user
+
+
+## Methodology
+
+### Front-end
+
+ - Using Haml instead of HTML
+
+ - Using Sass(.scss) instead of CSS
+
+ - Adopted BEM notation
