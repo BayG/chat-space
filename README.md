@@ -27,9 +27,9 @@ Rails 5.0.1
 ## Database design
 
 
-1. Table
+1. Tables
 
-  users Table
+  users table
   
   |column|type|
   |:---:|:---:|
@@ -37,7 +37,7 @@ Rails 5.0.1
   |email|string|
   |password|integer|
   
-  messages Table
+  messages table
   
   |column|type|
   |:---:|:---:|
@@ -46,14 +46,14 @@ Rails 5.0.1
   |user_id|integer|
   |group_id|integer|
   
-  groups Table
+  groups table
   
   |column|type|
   |:---:|:---:|
   |group_name|string|
 
   
-  Users_groups Table
+  group_user table
   
   |column|type|
   |:---:|:---:|
@@ -65,22 +65,24 @@ Rails 5.0.1
 
   users table   One-to-many   messages table
 
-  users table   One-to-many   users_groups table
+  users table   One-to-many   group_user table
 
-  groups table   One-to-many   users_groups table
+  groups table   One-to-many   group_user table
+
+  groups table   One-to-many   messages table
 
 
 ### 3. Associations
 
  - users
  has_many :messages
- has_many :groups, through: :groups_users
+ has_many :groups, through: :group_user
 
  - groups
- has_many :users, through: :groups_users
+ has_many :users, through: :group_user
  has_many :messages
 
- - groups_users
+ - group_user
  belongs_to :group
  belongs_to :user
 
@@ -94,3 +96,7 @@ Rails 5.0.1
  - Using Sass(.scss) instead of CSS
 
  - Adopted BEM notation
+
+### Back-end
+
+ - Introduced device
