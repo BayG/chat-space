@@ -13,5 +13,9 @@ module ChatSpace
       g.coffee     false
       g.helper     false
     end
+    # Make Japanese available for Rails
+    config.i18n.default_locale = :ja
+    # 起動時に読み込まれるようにしておく
+    config.i18n.load_path += Dir[Rails.root.join('config', 'locales', '**', '*.{rb,yml}').to_s]
   end
 end
