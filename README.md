@@ -35,7 +35,7 @@ Rails 5.0.1
   |:---:|:---:|
   |name|string|
   |email|string|
-  |password|integer|
+  |password|string|
   
   messages table
   
