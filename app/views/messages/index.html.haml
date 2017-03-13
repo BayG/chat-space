@@ -3,12 +3,13 @@
   .sidebar
     .sidebar-account
       .sidebar-account-info.clearfix
-        .sidebar-account__name
+        .sidebar-account-info__name
           %p sampleAccount
-        %a.sidebar-account__create-group
-          %i.fa.fa-pencil-square-o
-        %a.sidebar-account__edit-account
-          %i.fa.fa-cog
+        .sidebar-account-info__actionbtn
+          %a.sidebar-account__actionbtn--create-group
+            = fa_icon "pencil-square-o"
+          %a.sidebar-account-info__actionbtn--edit-account
+            = fa_icon "cog"
     .sidebar-group
       %ul.sidebar-group-block
         %li
