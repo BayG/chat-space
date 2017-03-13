@@ -31,7 +31,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 gem 'haml'
-gem 'erb2haml'
 gem "haml-rails", "~> 0.9"
 gem "font-awesome-rails"
 gem 'devise'
@@ -47,4 +46,6 @@ group :development do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'erb2haml'
 end
