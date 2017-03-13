@@ -6,23 +6,23 @@
         .sidebar-account-info__name
           %p sampleAccount
         .sidebar-account-info__actionbtn
-          %a.sidebar-account__actionbtn--create-group
+          %a.sidebar-account-info__actionbtn--create-group
             = fa_icon "pencil-square-o"
-          %a.sidebar-account-info__actionbtn--edit-account
+          = link_to edit_user_registration_path, method: :get, class: 'edit-account-btn' do
             = fa_icon "cog"
     .sidebar-group
       %ul.sidebar-group-block
         %li
-          .sidebar-group__group-name
+          .sidebar-group-block__group-name
             %p sampleGroup1
           %br/
-          .sidebar-group__latest-message
-            %p I see
+          .sidebar-group-block__latest-message
+            %p Then let's do it
         %li
-          .sidebar-group__group-name
+          .sidebar-group-block__group-name
             %p sampleGroup2
           %br/
-          .sidebar-group__latest-message
+          .sidebar-group-block__latest-message
             %p There is no message yet.
   .main-content
     .main-content-header
@@ -56,11 +56,10 @@
               00:00:00
           %br/
           .main-content-body__message
-            %p I see
+            %p Then let's do it
     .main-content-footer
       %form
         %textarea.main-content-footer__message-box{row: "1", placeholder: "Type a message here", name: "message[body]", id: "message_body"}
         %label.main-content-footer__insert-file
-          / %input{type: "file", name: "message[image]", id: "message_image"}/
           %i.fa.fa-image
         %input.main-content-footer.send-button{type: "submit", value: "Send"}
