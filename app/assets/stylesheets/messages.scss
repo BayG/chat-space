@@ -48,15 +48,11 @@ li {
           font-size: 20px;
           position: relative;
           bottom: 2px;
-          &--create-group {
-            text-align: right;
-            padding: 0 5px;
-            display: inline-block;
-          }
-          &--edit-account {
-            text-align: right;
-            padding: 0 5px;
-            display: inline-block;
+          text-align: right;
+          padding: 0 5px;
+          display: inline-block;
+          a {
+            color: white;
           }
         }
       }
@@ -70,14 +66,18 @@ li {
       box-sizing: border-box;
       &-block{
         padding: 0 0;
-      }
-      &__group-name {
-        font-size: 15px;
-        display: inline-block;
-      }
-      &__latest-message {
-        font-size: 11px;
-        display: inline-block;
+        &__group-name {
+          display: inline-block;
+          p {
+            font-size: 15px;
+          }
+        }
+        &__latest-message {
+          display: inline-block;
+          p {
+            font-size: 11px;
+          }
+        }
       }
     }
   }
