@@ -26,11 +26,10 @@ li {
     width: 300px;
     float: left;
     &-account {
-      background-color: $nameBlue;
+      background-color: $nameNavy;
       height: 100px;
       width: 100%;
       color: $textWhite;
-      font-size: 16px;
       padding: 0 20px;
       box-sizing: border-box;
       &-info {
@@ -38,29 +37,28 @@ li {
         top: 40px;
         left: 0px;
         font-weight: bold;
-      }
         &__name {
           float: left;
           margin: auto;
+          font-size: 16px;
           letter-spacing: 1px;
         }
-        &__create-group {
-          text-align: right;
+        &__actionbtn {
           float: right;
-          padding: 0 5px;
           font-size: 20px;
-          display: inline-block;
-        }
-        &__edit-account {
+          position: relative;
+          bottom: 2px;
           text-align: right;
-          float: right;
           padding: 0 5px;
-          font-size: 20px;
           display: inline-block;
+          a {
+            color: white;
+          }
         }
+      }
     }
     &-group {
-      background-color: $groupBlue;
+      background-color: $groupNavy;
       width: 100%;
       height: calc(100% - 100px);
       color: $textWhite;
@@ -68,14 +66,18 @@ li {
       box-sizing: border-box;
       &-block{
         padding: 0 0;
-      }
-      &__group-name {
-        font-size: 15px;
-        display: inline-block;
-      }
-      &__latest-message {
-        font-size: 11px;
-        display: inline-block;
+        &__group-name {
+          display: inline-block;
+          p {
+            font-size: 15px;
+          }
+        }
+        &__latest-message {
+          display: inline-block;
+          p {
+            font-size: 11px;
+          }
+        }
       }
     }
   }
