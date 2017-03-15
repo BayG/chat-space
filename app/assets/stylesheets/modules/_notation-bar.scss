@@ -1,15 +1,12 @@
-  .alert.alert-info {
-    background-color: $lightBlue;
+  .alert {
     height: 30px;
     color: $textWhite;
     text-align: center;
     line-height: 30px;
-  }
-
-  .alert.alert-danger {
-    background-color: $dangerRed;
-    height: 30px;
-    color: $textWhite;
-    text-align: center;
-    line-height: 30px;
+    &.alert-info {
+      background-color: $lightBlue;
+    }
+    &.alert-danger {
+      background-color: $dangerRed;
+    }
   }
