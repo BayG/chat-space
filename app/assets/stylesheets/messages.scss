@@ -101,9 +101,7 @@ li {
           display: inline-block;
         }
       .edit-group {
-        position: absolute;
-        top: 0px;
-        right: 40px;
+        float: right;
         height: 45px;
         width: 70px;
         margin: 28px auto;
