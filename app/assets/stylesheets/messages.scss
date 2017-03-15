@@ -1,11 +1,3 @@
-.notation-bar {
-   background-color: $lightBlue;
-   height: 30px;
-   width: 100%;
-   color: $textWhite;
-   font-size: 20px;
-   text-align: center;
-}
 p {
   display: inline-block;
   text-align: center;
@@ -91,6 +83,7 @@ li {
       border-bottom: 1px solid $borderGray;
       padding: 0 40px;
       box-sizing: border-box;
+      line-height: 25px;
       &-group-info {
         display: inline-block;
         position: relative;
@@ -109,7 +102,7 @@ li {
         }
       .edit-group {
         position: absolute;
-        top: 28px;
+        top: 0px;
         right: 40px;
         height: 45px;
         width: 70px;
