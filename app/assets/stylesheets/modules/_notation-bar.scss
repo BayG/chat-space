@@ -3,10 +3,12 @@
     color: $textWhite;
     text-align: center;
     line-height: 30px;
-    &.alert-info {
+  }
+
+.alert-info {
       background-color: $lightBlue;
     }
-    &.alert-danger {
+
+.alert-danger {
       background-color: $dangerRed;
     }
-  }
