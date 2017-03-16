@@ -1,6 +1,11 @@
 class GroupsController < ApplicationController
 
-def index
+def new
+  @group = Group.new
+  @user = current_user
+end
+
+def edit
 end
 
 end
