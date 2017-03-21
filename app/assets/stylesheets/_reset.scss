@@ -10,14 +10,14 @@
     */
     html{
         color:#000;
-        background: rgba(246, 246, 246, 0.5);
+        background:#FFF;
     }
     /*
         TODO remove settings on BODY since we can't namespace it.
     */
     /*
         TODO test putting a class on HEAD.
-            - Fails on FF. 
+            - Fails on FF.
     */
     body,
     div,
