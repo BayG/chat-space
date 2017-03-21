@@ -16,7 +16,8 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, info: "チャットグルーブが作成されました"
     else
-      render :new, error: "グループ作成に失敗しました。"
+      flash.now[:error] = "グループ作成に失敗しました"
+      render :new
     end
   end
 
