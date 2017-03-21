@@ -1,12 +1,11 @@
 class GroupsController < ApplicationController
 
   def index
-    @groups = Group.all
+    current_user.groups.new
   end
 
   def new
     @group = Group.new
-    current_user.groups.new
   end
 
   def edit
@@ -16,8 +15,10 @@ class GroupsController < ApplicationController
     @group = Group.new(group_params)
     if @group.save
       redirect_to root_path
+      flash.content_tag :div, 1, class: "alert alert-info"
     else
       render :new
+      flash.content_tag :div, 0, class: "alert alert-danger"
     end
   end
 
