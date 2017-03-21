@@ -1,7 +1,6 @@
 class GroupsController < ApplicationController
 
   def index
-    current_user.groups.new
   end
 
   def new
@@ -9,16 +8,15 @@ class GroupsController < ApplicationController
   end
 
   def edit
+    @group = current_user.groups.find(group_params)
   end
 
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path
-      flash.content_tag :div, 1, class: "alert alert-info"
+      redirect_to root_path, info: "チャットグルーブが作成されました"
     else
-      render :new
-      flash.content_tag :div, 0, class: "alert alert-danger"
+      render :new, danger: "グループ作成に失敗しました。"
     end
   end
 
