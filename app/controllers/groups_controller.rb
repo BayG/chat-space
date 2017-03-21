@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = current_user.groups.find(:group_name)
+    @group = current_user.groups.find(:name)
   end
 
   def create
@@ -25,6 +25,6 @@ class GroupsController < ApplicationController
 
   private
     def group_params
-      params.require(:group).permit(:group_name)
+      params.require(:group).permit(:name)
     end
 end
