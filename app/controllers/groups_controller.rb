@@ -6,7 +6,7 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    @user = current_user
+    current_user.groups.new
   end
 
   def edit
