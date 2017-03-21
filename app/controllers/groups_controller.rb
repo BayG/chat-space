@@ -8,7 +8,7 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = current_user.groups.find(group_params)
+    @group = current_user.groups.find(:group_name)
   end
 
   def create
@@ -16,7 +16,7 @@ class GroupsController < ApplicationController
     if @group.save
       redirect_to root_path, info: "チャットグルーブが作成されました"
     else
-      render :new, danger: "グループ作成に失敗しました。"
+      render :new, error: "グループ作成に失敗しました。"
     end
   end
 
