@@ -50,7 +50,7 @@ Rails 5.0.1
   
   |column|type|
   |:---:|:---:|
-  |group_name|string|
+  |name|string|
 
   
   group_user table
