@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :set_group, only: [:edit, :create, :update]
+  before_action :set_group, only: [:edit, :update]
 
   def index
   end
@@ -15,7 +15,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     if @group.save
-      redirect_to root_path, info: "チャットグループが作成されました"
+      redirect_to root_path, notice: "チャットグループが作成されました"
     else
       flash.now[:warning] = "グループ作成に失敗しました"
       render :new
@@ -24,7 +24,7 @@ class GroupsController < ApplicationController
 
   def update
     if @group.update(group_params)
-      redirect_to root_path, info: "チャットグループが更新されました"
+      redirect_to root_path, notice: "チャットグループが更新されました"
     else
       flash.now[:warning] = "グループ編集に失敗しました"
       render :edit
