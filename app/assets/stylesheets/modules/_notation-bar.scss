@@ -1,14 +1,14 @@
-.alert {
+.flash {
   height: 30px;
   color: $textWhite;
   text-align: center;
   line-height: 30px;
 }
 
-.alert-info {
+.notice {
   background-color: $lightBlue;
 }
 
-.alert-warning {
+.alert {
   background-color: $warningRed;
 }
