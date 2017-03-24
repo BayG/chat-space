@@ -1,6 +1,6 @@
 class GroupsController < ApplicationController
 
-  before_action :get_group, only: [:edit, :create, :update]
+  before_action :set_group, only: [:edit, :create, :update]
 
   def index
   end
@@ -13,6 +13,7 @@ class GroupsController < ApplicationController
   end
 
   def create
+    @group = Group.new(group_params)
     if @group.save
       redirect_to root_path, info: "チャットグループが作成されました"
     else
@@ -35,7 +36,7 @@ class GroupsController < ApplicationController
       params.require(:group).permit(:name)
     end
 
-    def get_group
+    def set_group
       @group = Group.find(params[:id])
     end
 end
