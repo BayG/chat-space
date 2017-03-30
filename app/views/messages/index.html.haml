@@ -13,14 +13,7 @@
       = link_to "Edit", edit_group_path(params[:group_id]), class: 'edit-group-btn'
     .main-content-body
       - @messages.each do |message|
-        .main-content-body-block
-          %p.main-content-body-block__name
-            = message.user.name
-          %p.main-content-body-block__time
-            = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
-          %br
-          %p.main-content-body-block__message
-            = message.body
+        = render partial: "common/message", locals: { message: message }
     .main-content-footer
       = form_for [@group, @message] do |f|
         = f.text_area :body, class: "main-content-footer__message-box", placeholder: "Type a message here"

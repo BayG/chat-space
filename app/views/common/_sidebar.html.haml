@@ -10,13 +10,4 @@
           = fa_icon "cog"
   .sidebar-group
     - @groups.each do |group|
-      = link_to group_messages_path(group) do
-        .sidebar-group-block
-          %p.sidebar-group-block__group-name
-            = group.name
-          %br/
-          %p.sidebar-group-block__latest-message
-            - if group.messages.last
-              = group.messages.last.body
-            - else
-              = "No message yet"
+      = render partial: "common/group", locals: { group: group }
