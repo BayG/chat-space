@@ -54,18 +54,29 @@ a {
       width: 100%;
       height: calc(100% - 100px);
       color: $textWhite;
-      padding: 0 20px;
       box-sizing: border-box;
+      overflow: auto;
       &-block{
-        padding: 0 0;
+        padding: 20px;
+        &:hover {
+          cursor: pointer;
+          background-color: $hoverNavy
+        }
         &__group-name {
           display: inline-block;
+          text-decoration: none
           p {
             font-size: 15px;
           }
         }
         &__latest-message {
           display: inline-block;
+          font-size: 11px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+          width: 260px;
+          text-align: left;
           p {
             font-size: 11px;
           }
@@ -86,7 +97,7 @@ a {
       line-height: 25px;
       &-group-info {
         display: inline-block;
-        position: absolute;
+        position: relative;
         top: 30px;
       }
         &__group-title {
@@ -101,7 +112,7 @@ a {
           color: $textGray;
           display: inline-block;
         }
-      .edit-group {
+      .edit-group-btn {
         float: right;
         height: 45px;
         width: 70px;
@@ -114,30 +125,38 @@ a {
         border-radius: 1px;
         border: 2px solid $lightBlue;
         box-sizing: border-box;
-        p {
-          line-height: 45px;
-        }
+        line-height: 40px;
+        text-decoration: none;
       }
     }
     &-body {
       height: calc(100vh - 187px);
-      padding: 0 40px;
+      padding: 40px 40px 0 40px;
       box-sizing: border-box;
-      &__name {
-        font-size: 16px;
-        font-weight: bold;
-        color: $textBlack;
-        display: inline-block;
-      }
-      &__time {
-        font-size: 12px;
-        color: $textGray;
-        display: inline-block;
-      }
-      &__message {
-        font-size: 14px;
-        color: $textBlack;
-        display: inline-block;
+      background-color: $bodyGray;
+      overflow: auto;
+      width: 100%;
+      &-block {
+        padding-bottom: 40px;
+        &__name {
+          margin-right: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          color: $textBlack;
+          display: inline-block;
+        }
+        &__time {
+          font-size: 12px;
+          color: $textGray;
+          display: inline-block;
+        }
+        &__message {
+          font-size: 14px;
+          color: $textBlack;
+          margin-top: 10px;
+          display: inline-block;
+          text-align: left;
+        }
       }
     }
     &-footer {
@@ -158,19 +177,19 @@ a {
         width: calc(100% - 115px);
         box-sizing: border-box;
         border: none;
-        line-height: 8px;
+        line-height: 20px;
         resize: none;
       }
-      &__insert-file {
+      i.fa.fa-image {
         position: absolute;
-        top: 32px;
+        top: 36px;
         right: 130px;
         max-width: 30px;
         &:hover{
           cursor: pointer;
           }
       }
-      .send-button {
+      &__send-button {
         position: absolute;
         top: 0px;
         right: 0px;
