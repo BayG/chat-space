@@ -1,70 +1,28 @@
 #contents.clearfix
-  .sidebar
-    .sidebar-account
-      .sidebar-account-info.clearfix
-        .sidebar-account-info__name
-          %p sampleAccount
-        .sidebar-account-info__actionbtn
-          = link_to new_group_path, class: 'create-group-btn' do
-            = fa_icon "pencil-square-o"
-          = link_to edit_user_registration_path, class: 'edit-account-btn' do
-            = fa_icon "cog"
-    .sidebar-group
-      %ul.sidebar-group-block
-        %li
-          .sidebar-group-block__group-name
-            %p sampleGroup1
-          %br/
-          .sidebar-group-block__latest-message
-            %p Then let's do it
-        %li
-          .sidebar-group-block__group-name
-            %p sampleGroup2
-          %br/
-          .sidebar-group-block__latest-message
-            %p There is no message yet.
+  = render partial: "common/sidebar"
   .main-content
     .main-content-header
       .main-content-header-group-info
-        .main-content-header__group-title
-          %p sampleGroup1
+        %p.main-content-header__group-title
+          = @group.name
         %br/
-        .main-content-header__members
-          %p Members: Aziz Bob Mary Mike John
-      %a.main-content-header.edit-group
-        %p
-          Edit
+        %p.main-content-header__members
+          Members:
+          - @group.users.each do |user|
+            = user.name
+      = link_to "Edit", edit_group_path(params[:group_id]), class: 'edit-group-btn'
     .main-content-body
-      %ul.main-content-body-block
-        %li
-          .main-content-body__name
-            %p Aziz
-          .main-content-body__time
-            %p
-              2017/02/27
-              00:00:00
-          %br/
-          .main-content-body__message
-            %p I see
-        %li
-          .main-content-body__name
-            %p Aziz
-          .main-content-body__time
-            %p
-              2017/02/27
-              00:00:00
-          %br/
-          .main-content-body__message
-            %p Then let's do it
+      - @messages.each do |message|
+        .main-content-body-block
+          %p.main-content-body-block__name
+            = message.user.name
+          %p.main-content-body-block__time
+            = message.created_at.strftime("%Y-%m-%d %H:%M:%S")
+          %br
+          %p.main-content-body-block__message
+            = message.body
     .main-content-footer
-      %form
-        %textarea.main-content-footer__message-box{row: "1", placeholder: "Type a message here", name: "message[body]", id: "message_body"}
-        %label.main-content-footer__insert-file
-          %i.fa.fa-image
-        %input.main-content-footer.send-button{type: "submit", value: "Send"}
-      / = form_for [@group, @message] do |f|
-      /   = f.text_area :text, class: "main-content-footer__message-box", placeholder: "Type a message here"
-      /   = f.label :image, class: "main-content-footer__insert-file" do
-      /     = f.file_field :image
-      /     = f.fa_icon "image"
-      /   = f.submit "Send", class: "main-content-footer__send-button", "data-disable-with" => "Save"
+      = form_for [@group, @message] do |f|
+        = f.text_area :body, class: "main-content-footer__message-box", placeholder: "Type a message here"
+        = fa_icon "image"
+        = f.submit "Send", class: "main-content-footer__send-button", "data-disable-with" => "Save"
