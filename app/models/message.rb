@@ -2,5 +2,5 @@ class Message < ApplicationRecord
   belongs_to :user
   belongs_to :group
 
-  validates :text, presence: true
+  validates_presence_of :body, :user_id
 end
