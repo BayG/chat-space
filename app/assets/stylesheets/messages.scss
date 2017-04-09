@@ -60,11 +60,11 @@ a {
         padding: 20px;
         &:hover {
           cursor: pointer;
-          background-color: $hoverNavy
+          background-color: $hoverNavy;
         }
         &__group-name {
           display: inline-block;
-          text-decoration: none
+          text-decoration: none;
           p {
             font-size: 15px;
           }
