@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
   # nameカラム許可申請に入る
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  add_flash_types :info, :warning, :notice, :alert
+  add_flash_types :notice, :alert
 
   protected
   # permitメソッドを使用。キーを追加。キーワード引数keysを使用

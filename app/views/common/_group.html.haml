@@ -1,0 +1,7 @@
+= link_to group_messages_path(group) do
+  .sidebar-group-block
+    %p.sidebar-group-block__group-name
+      = group.name
+    %br/
+    %p.sidebar-group-block__latest-message
+      = group.messages.last ? group.messages.last.body : "No message yet"
