@@ -8,8 +8,8 @@
         %br/
         %p.main-content-header__members
           Members:
-          - @group.users.each do |user|
-            = user.name
+          - @group.users.pluck(:name).each do |user|
+            = user
       = link_to "Edit", edit_group_path(params[:group_id]), class: 'edit-group-btn'
     .main-content-body
       - @messages.each do |message|
@@ -18,4 +18,4 @@
       = form_for [@group, @message] do |f|
         = f.text_area :body, class: "main-content-footer__message-box", placeholder: "Type a message here"
         = fa_icon "image"
-        = f.submit "Send", class: "main-content-footer__send-button", "data-disable-with" => "Save"
+        = f.submit "Send", class: "main-content-footer__send-button"
