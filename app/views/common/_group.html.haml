@@ -4,7 +4,4 @@
       = group.name
     %br/
     %p.sidebar-group-block__latest-message
-      - if group.messages.last
-        = group.messages.last.body
-      - else
-        = "No message yet"
+      = group.messages.last ? group.messages.last.body : "No message yet"
