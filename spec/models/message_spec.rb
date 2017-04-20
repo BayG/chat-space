@@ -25,5 +25,4 @@ describe Message do
 			expect(message.errors[:group_id]).to include("を入力してください")
 		end
 	end
-
 end
