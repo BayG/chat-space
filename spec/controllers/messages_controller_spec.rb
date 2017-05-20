@@ -8,26 +8,23 @@ describe MessagesController do
 
   before do
     sign_in user
+    get :index, params: { group_id: group.id }
   end
 
   describe 'GET #index' do
     it "renders the :index template" do
-      get :index, params: { group_id: group.id }
       expect(responces).to render_template :index
     end
 
     it "assigns the required contact to @user" do
-      get :index, params: { group_id: group }
       expect(assigns(:user)).to eq user
     end
 
     it "assigns the required contact to @group" do
-      get :index, params: { group_id: group }
       expect(assigns(:group)).to eq group
     end
 
     it "assigns the required contact to @groups" do
-      get :index, params: { group_id: group }
       expect(assigns(:groups)).to eq user.groups
     end
   end
